@@ -2,6 +2,7 @@ package com.koscom.springboot.web;
 
 import com.koscom.springboot.service.PostsService;
 import com.koscom.springboot.web.dto.posts.PostsResponseDto;
+import com.koscom.springboot.web.dto.posts.PostsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model) {
+        postsService.save(new PostsSaveRequestDto("test", "test", "test"));
         model.addAttribute("posts", postsService.findAllDesc());
         return "index";
     }
