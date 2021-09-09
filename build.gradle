@@ -4,6 +4,10 @@ plugins {
 	id 'java'
 }
 
+bootJar {
+	archiveName = 'application.jar'
+}
+
 group = 'com.koscom'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
